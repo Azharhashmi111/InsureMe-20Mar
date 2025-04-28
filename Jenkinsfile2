@@ -28,7 +28,7 @@ pipeline {
     
     stage('Docker Image Creation') {
       steps {
-       sh 'docker build -t azharhashmi/insureproject1:latest .'
+       sh 'docker build -t azharhashmi/insureproject2:latest .'
             }
     }
 
@@ -42,12 +42,8 @@ pipeline {
 
      stage('Push Image to DockerHub') {
     steps {
-        sh '''
-        docker stop insureproject1 || true
-        docker rm insureproject1 || true
-        docker rmi azharhashmi/insureproject1:latest || true
-        docker push azharhashmi/insureproject1:latest
-        '''
+        sh 'docker push azharhashmi/insureproject2:latest'
+        
     }
 }
 
