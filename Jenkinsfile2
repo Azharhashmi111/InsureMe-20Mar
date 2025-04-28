@@ -41,10 +41,16 @@ pipeline {
            }
 
      stage('Push Image to DockerHub') {
-      steps {
-        sh 'docker push azharhashmi/insureproject1:latest'
-            }
+    steps {
+        sh '''
+        docker stop insureproject1 || true
+        docker rm insureproject1 || true
+        docker rmi azharhashmi/insureproject1:latest || true
+        docker push azharhashmi/insureproject1:latest
+        '''
     }
+}
+
 
     stage('Deploy Application using Ansible') {
       steps {
