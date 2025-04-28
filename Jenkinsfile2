@@ -50,7 +50,7 @@ pipeline {
 
     stage('Deploy Application using Ansible') {
       steps {
-      ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible2', inventory: '/etc/ansible/hosts', playbook: 'deploy.com', vaultTmpPath: ''
+     ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible2', inventory: '/etc/ansible/hosts', playbook: 'deploy.yml', vaultTmpPath: ''
             }
     }
     
