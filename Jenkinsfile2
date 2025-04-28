@@ -9,7 +9,7 @@ pipeline {
     stage('CheckOut') {
       steps {
         echo 'Checkout the source code from GitHub'
-        git branch: 'main', url: 'https://github.com/karthikpyati777/InsureMe-20Mar.git'
+        git branch: 'main', url: 'https://github.com/Azharhashmi111/InsureMe-20Mar.git'
             }
     }
     
@@ -28,7 +28,7 @@ pipeline {
     
     stage('Docker Image Creation') {
       steps {
-       sh 'docker build -t karthik854/insureprojectdec3:latest .'
+       sh 'docker build -t azharhashmi/insureprojectdec3:latest .'
             }
     }
 
@@ -42,7 +42,7 @@ pipeline {
 
      stage('Push Image to DockerHub') {
       steps {
-        sh 'docker push karthik854/insureprojectdec3:latest'
+        sh 'docker push azharhashmi/insureprojectdec3:latest'
             }
     }
 
