@@ -16,4 +16,4 @@
     become: yes
     become_user: root
   - name: Deploy the Image from DockerHub and Run as Container
-    command: docker run -itd -p 9095:8081 azharhashmi/insureproject4:latest
+    command: docker run -itd -p 9096:8081 azharhashmi/insureproject5:latest
